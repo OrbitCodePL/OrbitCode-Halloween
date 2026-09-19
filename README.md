@@ -1,2 +1,2 @@
 # ?? OrbitCode-Halloween
-Java Minecraft plugin by OrbitCodePL | orbitcode.pl | discord.gg/orbitcode
+Java Minecraft plugin by OrbitCodePL | orbitcode.pl
