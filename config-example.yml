@@ -1,0 +1,136 @@
+# OrbitCode Halloween Plugin Configuration
+# Minecraft 1.20+
+
+# === SETTINGS ===
+
+# Czas odnowienia skalki w sekundach (domyslnie 180 = 3 minuty)
+pumpkin-refresh-time: 180
+
+# Czas respawnu mobow eventowych w tickach (domyslnie 60 = 3 sekundy)
+mob-refresh-time: 60
+
+# Szansa na drop dyni z mobow eventowych (w procentach, domyslnie 25%)
+mob-dye-chance: 25
+
+# Ilosc mobow w jednej fali skalki (domyslnie 8)
+boss-mob-amount: 8
+
+# Opoznienie miedzy falami mobow w tickach (domyslnie 40 = 2 sekundy)
+wave-delay: 40
+
+# Max ilosc dyni na swiecie
+max-world-pumpkins: 10
+
+# Interwal spawnu dyni na swiecie w sekundach (domyslnie 120)
+world-pumpkin-interval: 120
+
+# Promien wykrywania skalki w blokach
+pumpkin-detection-radius: 15
+
+# Zdrowie base mobow bosowych
+boss-base-health: 20.0
+
+# Bonus zdrowia na fale
+boss-health-per-wave: 5.0
+
+# === MODELE CUSTOM ITEMOW ===
+
+# Model data skalki bossowej
+boss-pumpkin-model: 1000001
+
+# Model data dyni poziomu 1
+pumpkin-lv1-model: 2000001
+
+# Model data dyni poziomu 2
+pumpkin-lv2-model: 2000002
+
+# Model data dyni poziomu 3
+pumpkin-lv3-model: 2000003
+
+# Model data itemow wymiany
+exchange-model-1to2: 4000001
+exchange-model-2to3: 4000002
+exchange-model-3to-reward: 4000003
+
+# Model data mobow bossowych
+mob-model-base: 3000000
+
+# === WYMIANA DYŃ ===
+
+# Ilosc dyni poziomu 1 potrzebnych na wymiane na poziomie 2
+exchange-lv1-to-lv2-amount: 5
+
+# Ilosc dyni poziomu 2 potrzebnych na wymiane na poziomie 3
+exchange-lv2-to-lv3-amount: 3
+
+# Ilosc dyni poziomu 3 potrzebnych na wymiane na nagrode
+exchange-lv3-to-reward-amount: 5
+
+# === KOMUNIKATY ===
+
+# Prefix pluginu
+prefix: '&4&lHalloween &r&c»'
+
+# Komunikat o aktywacji skalki
+message-boss-activated: '&4&lSKAŁKA HALLOWEEN &r&cZOSTAŁA AKTYWOWANA!'
+message-boss-defenders: '&cObrońcy spawnuja sie za chwile!'
+message-boss-last-wave: '&cOstatnia fala obrońców!'
+
+# Komunikat o zniszczeniu skalki
+message-pumpkin-destroyed: '&4&lHalloween &r&cSkałka zostala zniszczona!'
+message-pumpkin-refreshed: '&4&lHalloween &r&eSkalka odnowila sie!'
+
+# Komunikat o dropie
+message-drop-received: '&a&lHalloween &r&aOtrzymales nagrode!'
+
+# Komunikat o bledach
+message-no-pumpkin: '&cTo nie jest Straszna Dynia!'
+message-not-enough: '&cNie masz wystarczajacej ilosci dyni!'
+message-already-fighting: '&cJuz walczysz z inna skalka!'
+
+# === SYSIEM OTWIERANIA DYŃ (DROP ANARCHICZNY) ===
+
+# Typy nagrod do losowania
+# Wartosci: emerald, diamond, golden_apple, totem, enchanted_book, elytra,
+#           nether_star, dragon_egg, experience_bottle, TNT, string, glowstone_dust,
+#           netherite_ingot, iron_block, gold_block, enchanted_golden_apple,
+#           pumpkin_pie, cookie, cake, music_disc
+
+# Poziom 1 - procentowe szanse na nagrody (suma musi byc 100)
+reward-lv1: {}
+
+# Poziom 2 - procentowe szanse na nagrody (suma musi byc 100)
+reward-lv2:
+  netherite_ingot: 5
+  stone_axe: 5
+  totem_of_undying: 10
+  golden_apple: 15
+  emerald: 15
+  diamond: 15
+  enchanted_golden_apple: 8
+  experience_bottle: 12
+
+# Poziom 3 - procentowe szanse na nagrody (suma musi byc 100)
+reward-lv3:
+  nether_star: 3
+  totem_of_undying: 5
+  netherite_pickaxe: 7
+  dragon_egg: 7
+  elytra: 8
+  enchanted_golden_apple: 10
+  diamond_block: 10
+  emerald: 15
+  enchanted_book: 10
+  iron_block: 5
+  gold_block: 5
+  experience_bottle: 5
+custom-rewards:
+  lv1:
+    aa71410e:
+      weight: 1000
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        DataVersion: 4325
+        id: minecraft:bone
+        count: 1
+        schema_version: 1

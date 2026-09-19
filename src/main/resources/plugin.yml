@@ -1,0 +1,59 @@
+name: OrbitCode-Halloween
+version: 1.0.0
+main: pl.orbitcode.halloween.HalloweenPlugin
+api-version: 1.20
+author: xGamereq
+website: orbitcode.pl
+description: Halloween Event Plugin - Skalki (Jajo Smoka), moby, wymiana dyni
+softdepend: [PlaceholderAPI]
+
+commands:
+  halloweenplace:
+    description: Postaw skalkę halloween (admin) /halloweenplace [gracz] [hp]
+    usage: /halloweenplace [<gracz>] [<hp>]
+    permission: halloween.admin
+  halloweenremove:
+    description: Usun skalkę halloween (admin)
+    usage: /halloweenremove [<gracz>]
+    permission: halloween.admin
+  halloweensethp:
+    description: Ustaw HP skalki (patrzysz lub promien)
+    usage: /halloweensethp <hp> [maxHp]
+    permission: halloween.admin
+  halloweenstats:
+    description: Statystyki eventu
+    usage: /halloweenstats
+    permission: halloween.use
+  halloweenopen:
+    description: Otworz dynie z reczku
+    usage: /halloweenopen
+    permission: halloween.use
+  exchange:
+    description: Menu wymiany dyni
+    usage: /exchange
+    permission: halloween.use
+  halloweenrespawn:
+    description: Odformuj wszystkie skalki
+    usage: /halloweenrespawn
+    permission: halloween.admin
+  givepumpkin:
+    description: Daj dynie graczowi
+    usage: /givepumpkin [<gracz>] [<ilosc>] [<poziom>]
+    permission: halloween.admin
+  halloweenhelp:
+    description: Pokaz help
+    usage: /halloweenhelp
+    permission: halloween.use
+  halloweendrop:
+    description: Edytuj drop z dyni per tier + custom drop + procent/waga
+    usage: /halloweendrop <list|add|remove|set|clear|reload> [tier] [wartosc]
+    permission: halloween.admin
+    aliases: [hdrop, halloween-drop, hdrops]
+
+permissions:
+  halloween.admin:
+    description: Pelna administracja eventu
+    default: op
+  halloween.use:
+    description: Uzywanie komend eventu
+    default: true

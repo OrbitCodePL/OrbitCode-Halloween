@@ -1,0 +1,131 @@
+# OrbitCode Halloween Plugin Configuration
+# Minecraft 1.20+
+
+# === SKAŁKA (HOLOGRAM + HP) ===
+
+# Domyslne HP skalky (nowe skalki) - ustawiane też komendą /halloweensethp
+pumpkin-health: 250
+
+# Ile obrażeń zadaje jedno uderzenie w skałkę
+pumpkin-damage-per-hit: 10
+
+# Czas odnowienia skalki w sekundach (domyslnie 180 = 3 minuty) - po zniszczeniu
+pumpkin-refresh-time: 180
+
+# Promien wykrywania skalki w blokach
+pumpkin-detection-radius: 15
+
+# Interwal spawnu obrońców podczas bicia skałki w tickach (domyślnie 30 = 1.5s)
+pumpkin-defender-spawn-interval: 30
+
+# Ilu obrońców max żyje jednocześnie wokół skałki
+pumpkin-defender-max-alive: 5
+
+# Ilu obrońców spawnuje sie na jedno wywołanie
+pumpkin-defender-per-spawn: 1
+
+# === MOBY EVENTOWE ===
+# Czas respawnu mobow eventowych w tickach (domyslnie 60 = 3 sekundy)
+mob-refresh-time: 60
+
+# Zdrowie base mobow
+boss-base-health: 20.0
+
+# Global fallback jeśli brak per-mob
+mob-dye-chance: 25
+defender-drop-chance: 35
+
+# Szanse na drop dyni zależne od typu moba (w %)
+mob-drop-chances:
+  ZOMBIE: 30
+  SKELETON: 25
+  SPIDER: 15
+  HUSK: 30
+  STRAY: 20
+  WITHER_SKELETON: 40
+
+defender-drop-chances:
+  ZOMBIE: 40
+  SKELETON: 35
+  WITHER_SKELETON: 50
+
+# Wagi poziomów dyni z defenderów (suma 100)
+defender-drop-lv1-weight: 50
+defender-drop-lv2-weight: 35
+defender-drop-lv3-weight: 15
+
+# === DROP ZE SKAŁKI (po zniszczeniu gdy HP spadnie do 0) ===
+pumpkin-drop-min: 2
+pumpkin-drop-max: 4
+pumpkin-drop-lv1-chance: 60
+pumpkin-drop-lv2-chance: 30
+pumpkin-drop-lv3-chance: 10
+pumpkin-bonus-drop-chance: 0.3
+
+# Max ilosc dyni na swiecie (WorldPumpkin)
+max-world-pumpkins: 10
+
+# Interwal spawnu dyni na swiecie w sekundach (domyslnie 120)
+world-pumpkin-interval: 120
+
+# === MODELE CUSTOM ITEMOW ===
+
+boss-pumpkin-model: 1000001
+pumpkin-lv1-model: 2000001
+pumpkin-lv2-model: 2000002
+pumpkin-lv3-model: 2000003
+exchange-model-1to2: 4000001
+exchange-model-2to3: 4000002
+exchange-model-3to-reward: 4000003
+mob-model-base: 3000000
+
+# === WYMIANA DYŃ ===
+
+exchange-lv1-to-lv2-amount: 5
+exchange-lv2-to-lv3-amount: 3
+exchange-lv3-to-reward-amount: 5
+
+# === KOMUNIKATY ===
+
+prefix: "&4&lHalloween &r&c»"
+message-boss-activated: "&4&lSKAŁKA HALLOWEEN &r&cZOSTAŁA AKTYWOWANA!"
+message-boss-defenders: "&cObrońcy skałki nadciągają!"
+message-boss-last-wave: "&cOstatnia fala obrońców!"
+message-pumpkin-destroyed: "&4&lHalloween &r&cSkałka zostala zniszczona!"
+message-pumpkin-refreshed: "&4&lHalloween &r&eSkalka odnowila sie!"
+message-drop-received: "&a&lHalloween &r&aOtrzymales nagrode!"
+message-no-pumpkin: "&cTo nie jest Straszna Dynia!"
+message-not-enough: "&cNie masz wystarczajacej ilosci dyni!"
+message-already-fighting: "&cJuz walczysz z inna skalka!"
+
+# === SYSTEM OTWIERANIA DYŃ (DROP) ===
+# Domyslne dropy USUNIETE - teraz tylko CUSTOM przez GUI / komendy
+# Uzyj /halloweendrop lub /halloweendrop gui - wsadz przedmiot i ustaw % na tabliczce
+reward-lv1: {}
+reward-lv2: {}
+reward-lv3: {}
+
+# === CUSTOM DROP (dodawane komenda /halloweendrop add <tier> <waga> z itemem w rece) ===
+# Struktura: custom-rewards.lv1.<id>.item = ItemStack  oraz .weight = waga
+# Edycja: /halloweendrop list <tier> / set <tier> <id/nazwa> <waga> / remove <tier> <id/nazwa>
+# Przyklad reczny (nie zalecany - uzyj komendy):
+#custom-rewards:
+#  lv1:
+#    a1b2c3d4:
+#      weight: 10
+#      item:
+#        ==: org.bukkit.inventory.ItemStack
+#        v: 3218
+#        type: DIAMOND_SWORD
+#  lv2: {}
+#  lv3: {}
+
+# === WYGLAD SKALKI ===
+# Krysztal Endu (END_CRYSTAL) na BEDROCK z kreceniem + efekty portal/dragon breath/end rod
+# Hologram bez paska progresu - tylko HP ❤
+
+# === PLACEHOLDERY (PlaceholderAPI) ===
+# %halloween_destroyed_rocks% - zniszczone skałki (krysztaly)
+# %halloween_killed_mobs% - zabite moby eventowe + obroncy
+# %halloween_opened_pumpkins% - otwarte dynie
+# Aliasy: %halloween_zniszczone_skalki% %halloween_zabite_moby% %halloween_otwarte_dynie% itd.
